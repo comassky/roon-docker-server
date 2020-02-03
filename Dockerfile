@@ -1,4 +1,5 @@
 FROM debian:stable-slim
+
 RUN apt-get update \
         && apt -y upgrade \
         && apt -y install bash curl bzip2 ffmpeg cifs-utils alsa-utils && apt autoremove -y
