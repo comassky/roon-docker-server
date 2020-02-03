@@ -9,10 +9,7 @@ ENV ROON_DATAROOT /data
 ENV ROON_ID_DIR /data
 
 RUN mkdir /app
-RUN cd /app
-RUN curl $ROON_SERVER_URL -O
-RUN tar xjvf $ROON_SERVER_PKG
-RUN rm -f $ROON_SERVER_PKG
+RUN cd /app && curl $ROON_SERVER_URL -O && tar xjf $ROON_SERVER_PKG &&  rm -f $ROON_SERVER_PKG
 
 VOLUME [ "/data", "/music", "/backup" ]
 
