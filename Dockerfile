@@ -8,8 +8,13 @@ ENV ROON_SERVER_URL http://download.roonlabs.com/builds/${ROON_SERVER_PKG}
 ENV ROON_DATAROOT /data
 ENV ROON_ID_DIR /data
 
-VOLUME [ "/app", "/data", "/music", "/backup" ]
+RUN mkdir /app
+RUN cd /app
+RUN curl $ROON_SERVER_URL -O
+RUN tar xjvf $ROON_SERVER_PKG
+RUN rm -f $ROON_SERVER_PKG
+
+VOLUME [ "/data", "/music", "/backup" ]
 
 ADD install.sh /
 ENTRYPOINT /install.sh
-
