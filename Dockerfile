@@ -11,5 +11,5 @@ ENV ROON_ID_DIR /data
 VOLUME [ "/app", "/data", "/music", "/backup" ]
 
 ADD install.sh /
-ENTRYPOINT /run.sh
+ENTRYPOINT /install.sh
 
