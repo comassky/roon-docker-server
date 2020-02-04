@@ -1,7 +1,6 @@
 FROM debian:stable-slim
 RUN apt-get update \
-        && apt -y upgrade \
-        && apt -y install bash curl bzip2 ffmpeg cifs-utils alsa-utils && apt autoremove -y
+        && apt-get -y install --no-install-recommends bash curl bzip2 ffmpeg cifs-utils alsa-utils && apt-get autoremove -y && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 ENV ROON_SERVER_PKG RoonServer_linuxx64.tar.bz2
 ENV ROON_SERVER_URL http://download.roonlabs.com/builds/${ROON_SERVER_PKG}
@@ -10,6 +9,6 @@ ENV ROON_ID_DIR /data
 
 VOLUME [ "/app", "/data", "/music", "/backup" ]
 
-ADD install.sh /
-ENTRYPOINT /install.sh
+COPY install.sh /
+ENTRYPOINT ["/install.sh"]
 
