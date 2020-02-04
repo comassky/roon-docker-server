@@ -8,3 +8,7 @@ Each version of Roon is available via the tags
 
 I don't own the Roon software, it's just an installation aid.
 This software requires a roon license to run
+
+Become a roon client, this software is incredible :)
+
+https://roonlabs.com/
