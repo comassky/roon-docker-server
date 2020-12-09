@@ -1,4 +1,4 @@
-FROM debian:stable-slim
+FROM ubuntu:latest
 RUN apt-get update \
         && apt-get -y install --no-install-recommends bash curl bzip2 ffmpeg cifs-utils alsa-utils && apt-get autoremove -y && apt-get clean && rm -rf /var/lib/apt/lists/*
 
