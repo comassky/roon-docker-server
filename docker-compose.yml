@@ -1,0 +1,16 @@
+version: '3.3'
+ services:
+     docker-roonserver:
+         container_name: Roon
+         environment:
+             - TZ=Europe/Paris
+         volumes:
+             - ./roon-app:/app
+             - ./roon-data:/data
+             - <PATH TO MUSIC>:/music:ro
+             - <PATH TO BACKUP>:/backup
+         image: comassky/roon:latest
+         cap_add:
+             - ALL
+         network_mode: host
+         privileged: true
