@@ -1,6 +1,6 @@
 # roon-docker-server
 
-Image based on latest debian-slim image base.
+Image based on latest Ubuntu image base.
 
 Just an image to run Roon server.
 
