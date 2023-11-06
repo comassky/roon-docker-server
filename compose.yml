@@ -8,10 +8,9 @@ services:
     volumes:
       - ./roon-app:/app
       - ./roon-data:/data
-     # - <PATH TO MUSIC>:/music:ro
-     # - <PATH TO BACKUP>:/backup
-    #image: comassky/roon:latest
-    image: test
+      - <PATH TO MUSIC>:/music:ro
+      - <PATH TO BACKUP>:/backup
+    image: comassky/roon:latest
     cap_add:
       - ALL
     network_mode: host
